@@ -116,59 +116,30 @@ export default function SaleExperience() {
       {stage === 'hint' && (
         <button
           onClick={handleHintClick}
-          className={`fixed bottom-20 right-6 z-50 group transition-all duration-700 ${
-            showHint ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-80 translate-y-1'
+          className={`fixed bottom-6 right-6 z-50 group transition-all duration-500 ${
+            showHint ? 'scale-100 opacity-100' : 'scale-90 opacity-70'
           }`}
           aria-label="Unlock strike deal"
         >
-          {/* Outer glow ring */}
-          <div className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-orange-500/30 to-red-600/20 blur-2xl animate-pulse" />
-          {/* Rotating border ring */}
-          <div className="absolute -inset-[2px] rounded-[22px] bg-gradient-to-br from-orange-500 via-red-500 to-orange-600 opacity-70 group-hover:opacity-100 transition-opacity duration-300 animate-spin-slow-ring" />
-
-          <div className="relative flex items-stretch glass rounded-[20px] overflow-hidden border-0 bg-[#0d0d0d]">
-            {/* Left accent strip */}
-            <div className="w-1 bg-gradient-to-b from-orange-400 to-red-600 shrink-0" />
-
-            {/* Icon column */}
-            <div className="flex items-center justify-center px-4 py-4 bg-gradient-to-br from-orange-500/15 to-red-600/10">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-orange-500/40 blur-md animate-pulse" />
-                <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/40">
-                  <Zap className="w-5 h-5 text-white" fill="white" />
-                </div>
+          <div className="relative">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 blur-xl opacity-60 animate-pulse" />
+            <div className="relative flex items-center gap-3 glass rounded-2xl px-5 py-4 border border-orange-500/30 hover:border-orange-500/60 transition-colors">
+              <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                <Zap
+                  className="w-6 h-6 text-white animate-pulse"
+                  fill="white"
+                />
               </div>
-            </div>
-
-            {/* Text column */}
-            <div className="flex flex-col justify-center pr-4 pl-1 py-3.5">
-              <div className="flex items-center gap-1.5 mb-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
-                <span className="text-[10px] font-bold text-orange-400 uppercase tracking-widest">
-                  Secret Deal
-                </span>
+              <div className="text-left">
+                <p className="text-xs text-orange-400 font-semibold uppercase tracking-wide">
+                  Lightning Deal
+                </p>
+                <p className="text-sm font-bold text-white">
+                  Strike to Unlock
+                </p>
               </div>
-              <p className="text-sm font-extrabold text-white leading-tight">
-                Strike to Unlock
-              </p>
-              <p className="text-[11px] text-gray-400 mt-0.5">
-                Hidden offer inside
-              </p>
+              <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
             </div>
-
-            {/* Arrow column */}
-            <div className="flex items-center pr-3.5 pl-1">
-              <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
-                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-orange-400 group-hover:translate-x-0.5 transition-all duration-300" />
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom label */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-            <span className="text-[10px] text-orange-500/60 font-medium tracking-wide">
-              tap to reveal
-            </span>
           </div>
         </button>
       )}
